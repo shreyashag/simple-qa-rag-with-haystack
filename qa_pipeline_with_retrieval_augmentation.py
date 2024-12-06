@@ -2,18 +2,17 @@ import os
 from haystack.document_stores.in_memory import InMemoryDocumentStore
 from datasets import load_dataset
 from haystack import Document
+from haystack import Pipeline
+from haystack.components.builders import PromptBuilder
 from haystack.components.embedders import SentenceTransformersDocumentEmbedder
 from haystack.components.embedders import SentenceTransformersTextEmbedder
 from haystack.components.retrievers.in_memory import InMemoryEmbeddingRetriever
+from haystack_integrations.components.generators.ollama import OllamaGenerator
 
-from haystack.components.builders import PromptBuilder
 
 # from getpass import getpass
 # from haystack.components.generators import OpenAIGenerator
 # Let's use open-source instead!
-from haystack_integrations.components.generators.ollama import OllamaGenerator
-from haystack import Pipeline
-
 # if "OPENAI_API_KEY" not in os.environ:
 #     os.environ["OPENAI_API_KEY"] = getpass("Enter OpenAI API key:")
 generator = OllamaGenerator(
