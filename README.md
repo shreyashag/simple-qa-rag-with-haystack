@@ -45,15 +45,15 @@ This repository contains an example of building a Retrieval-Augmented Generation
    Create a `.env` file in the project root, follow the `.env.sample` for keys:
    
    ```bash
-   echo 'OLLAMA_ENDPOINT="http://localhost:11434"' >> .env
-   echo 'OLLAMA_MODEL="qwen2.5-coder"' >> .env
+   echo 'export OLLAMA_ENDPOINT="http://localhost:11434"' >> .env
+   echo 'export OLLAMA_MODEL="qwen2.5-coder"' >> .env
    ```
    
    Make sure Ollama is running. For details, see the [Ollama Documentation](https://docs.ollama.ai/).
 
 5. **Run the Script:**
    ```bash
-   python qa_pipeline_with_retrieval_augmentation.py
+   source .env && python qa_pipeline_with_retrieval_augmentation.py
    ```
    
    You should see answers printed to the console for sample questions.
